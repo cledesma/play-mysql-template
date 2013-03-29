@@ -7,14 +7,15 @@ GET     /                           controllers.Application.index()
 
 # Sample
 # Routing # 1 - This works
-# GET		/sample 				controllers.StaticFile.getHtml(file = "public/html/index.html") 
+# GET		/sample 				controllers.StaticFileController.getHtml(file = "public/html/index.html") 
 # Routing # 2 - This also works
 GET 	/sample 					controllers.Assets.at(path="/public", file="/html/index.html")			
 
 # Tasks
-GET		/task						controllers.Application.listTasks()
-POST	/task 						controllers.Application.createTask()
-DELETE	/task/:id 					controllers.Application.deleteTask(id: Long)
+GET		/task						controllers.TaskController.listTasks()
+GET 	/task/:id 					controllers.TaskController.getTask(id: Long)
+POST	/task 						controllers.TaskController.createTask()
+DELETE	/task/:id 					controllers.TaskController.deleteTask(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

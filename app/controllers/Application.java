@@ -1,9 +1,8 @@
 package controllers;
 
-import play.*;
-import play.mvc.*;
-
-import views.html.*;
+import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.index;
 
 public class Application extends Controller {
   
@@ -11,16 +10,4 @@ public class Application extends Controller {
         return ok(index.render("Hello world"));
     }
     
-    public static Result listTasks() {
-    	return TODO;
-    }
-    
-    public static Result createTask() {
-    	return TODO;
-    }
-    
-    public static Result deleteTask(Long id) {
-    	return TODO;
-    }
-  
 }
